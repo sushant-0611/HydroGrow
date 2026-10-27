@@ -1,0 +1,1122 @@
+/* =========================================================
+   HYDROGROW
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+ min-height: 100vh;
+  background: #f7faf8;
+  color: #17352a;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 105px 0 95px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(63, 145, 100, 0.18),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #eaf7ef 0%,
+      #f5faf7 55%,
+      #e8f5ed 100%
+    );
+  border-bottom: 1px solid #dcebe1;
+}
+
+.about-hero::before {
+   content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  right: -180px;
+  top: -170px;
+  border: 1px solid rgba(43, 122, 77, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-hero::after {
+ content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -130px;
+  bottom: -170px;
+  border: 1px solid rgba(43, 122, 77, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-hero-content {
+   position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-eyebrow,
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #2c8050;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-eyebrow i {
+  font-size: 15px;
+}
+
+.about-hero h1 {
+   margin: 0;
+  color: #14372a;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.about-hero h1 span {
+   display: block;
+  color: #318653;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 24px auto 0;
+  color: #60776c;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.about-hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 30px;
+}
+
+.about-primary-btn,
+.about-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 47px;
+  padding: 0 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.about-primary-btn {
+  border: 1px solid #2f8050;
+  background: #2f8050;
+  color: #ffffff;
+}
+
+.about-primary-btn:hover {
+  border-color: #246d41;
+  background: #246d41;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.about-secondary-btn {
+  border: 1px solid #d3e3d9;
+  background: rgba(255, 255, 255, 0.7);
+  color: #326548;
+}
+
+.about-secondary-btn:hover {
+  border-color: #94bea2;
+  background: #ffffff;
+  color: #27663f;
+  transform: translateY(-2px);
+}
+
+.about-primary-btn i,
+.about-secondary-btn i {
+  transition: transform 0.2s ease;
+}
+
+.about-primary-btn:hover i,
+.about-secondary-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.about-intro {
+  padding: 105px 0;
+  background: #ffffff;
+}
+
+.about-platform-visual {
+  position: relative;
+  min-height: 535px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-visual-glow {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(66, 145, 96, 0.13),
+    rgba(66, 145, 96, 0)
+  );
+}
+
+/* =========================================================
+   DASHBOARD MOCKUP
+   ========================================================= */
+
+.about-dashboard-window {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 540px);
+  overflow: hidden;
+  border: 1px solid #dce9e0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow:
+    0 25px 60px rgba(28, 76, 49, 0.13),
+    0 4px 15px rgba(28, 76, 49, 0.05);
+  transform: rotate(-1deg);
+}
+
+.about-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 17px;
+  border-bottom: 1px solid #e7eee9;
+  background: #fbfdfc;
+  color: #62756b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.about-window-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.about-window-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c8d7ce;
+}
+
+.about-window-header > i {
+  color: #91a198;
+}
+
+.about-dashboard-content {
+  padding: 23px;
+}
+
+.about-dashboard-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.about-dashboard-title small {
+  display: block;
+  margin-bottom: 4px;
+  color: #779084;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.about-dashboard-title strong {
+  display: block;
+  color: #244636;
+  font-size: 15px;
+}
+
+.about-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border-radius: 20px;
+  background: #edf8f0;
+  color: #338052;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.about-live-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3d9a5e;
+  box-shadow: 0 0 0 4px rgba(61, 154, 94, 0.1);
+}
+
+/* =========================================================
+   SENSOR BOXES
+   ========================================================= */
+
+.about-sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.about-sensor-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid #e4ede7;
+  border-radius: 11px;
+  background: #f9fcfa;
+}
+
+.about-sensor-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 9px;
+  background: #e8f5ec;
+  color: #388458;
+  font-size: 14px;
+}
+
+.about-sensor-box small {
+  display: block;
+  margin-bottom: 2px;
+  color: #819188;
+  font-size: 9px;
+}
+
+.about-sensor-box strong {
+  color: #274b38;
+  font-size: 14px;
+}
+
+/* =========================================================
+   DASHBOARD CHART
+   ========================================================= */
+
+.about-dashboard-chart {
+  margin-top: 14px;
+  padding: 15px;
+  border: 1px solid #e4ede7;
+  border-radius: 11px;
+  background: #f9fcfa;
+}
+
+.about-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.about-chart-header span {
+  color: #355846;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.about-chart-header small {
+  color: #8a9991;
+  font-size: 9px;
+}
+
+.about-chart {
+  height: 105px;
+}
+
+.about-chart svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* =========================================================
+   FLOATING CARDS
+   ========================================================= */
+
+.about-floating-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 185px;
+  padding: 12px 14px;
+  border: 1px solid rgba(216, 231, 220, 0.95);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 15px 35px rgba(25, 67, 43, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.about-floating-one {
+  top: 48px;
+  right: -12px;
+}
+
+.about-floating-two {
+  bottom: 45px;
+  left: -18px;
+}
+
+.about-floating-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 9px;
+  background: #eaf7ed;
+  color: #348355;
+}
+
+.about-floating-card strong {
+  display: block;
+  color: #264936;
+  font-size: 11px;
+}
+
+.about-floating-card span {
+  display: block;
+  margin-top: 2px;
+  color: #8a9991;
+  font-size: 9px;
+}
+
+/* =========================================================
+   INTRO CONTENT
+   ========================================================= */
+
+.about-intro-content {
+  padding-left: 20px;
+}
+
+.about-intro-content h2,
+.about-centered-heading h2 {
+  margin: 13px 0 18px;
+  color: #17382a;
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: -1.2px;
+}
+
+.about-intro-content h2 span,
+.about-centered-heading h2 span {
+  color: #348655;
+}
+
+.about-intro-content > p {
+  margin-bottom: 15px;
+  color: #718078;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   CHECK LIST
+   ========================================================= */
+
+.about-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.about-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.about-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 50%;
+  background: #eaf6ed;
+  color: #2f8050;
+  font-size: 14px;
+}
+
+.about-check-item strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #284938;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.about-check-item span {
+  display: block;
+  color: #7a8981;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   CENTERED HEADINGS
+   ========================================================= */
+
+.about-centered-heading {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.about-centered-heading h2 {
+  margin-bottom: 14px;
+}
+
+.about-centered-heading p {
+  margin: 0;
+  color: #718078;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   WORKFLOW
+   ========================================================= */
+
+.about-workflow {
+  padding: 100px 0;
+  background: #f5faf7;
+  border-top: 1px solid #e1ece5;
+  border-bottom: 1px solid #e1ece5;
+}
+
+.about-workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-workflow-card {
+  position: relative;
+  min-height: 285px;
+  padding: 28px 23px 24px;
+  border: 1px solid #dfeae3;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 7px 25px rgba(31, 76, 50, 0.045);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about-workflow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(31, 76, 50, 0.09);
+}
+
+.about-workflow-number {
+  position: absolute;
+  top: 17px;
+  right: 19px;
+  color: #b7cdbf;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-workflow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 53px;
+  height: 53px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+  background: #eaf6ed;
+  color: #328052;
+  font-size: 22px;
+}
+
+.about-workflow-card h3 {
+  margin: 0 0 10px;
+  color: #254735;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.about-workflow-card p {
+  margin: 0;
+  color: #7a8981;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.about-workflow-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8db39b;
+  font-size: 20px;
+}
+
+/* =========================================================
+   CAPABILITIES
+   ========================================================= */
+
+.about-capabilities {
+  padding: 105px 0;
+  background: #ffffff;
+}
+
+.about-capability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.about-capability-card {
+  position: relative;
+  min-height: 290px;
+  padding: 28px 23px;
+  overflow: hidden;
+  border: 1px solid #e0ebe4;
+  border-radius: 16px;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.about-capability-card::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  bottom: -70px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #f0f8f2;
+}
+
+.about-capability-card:hover {
+  transform: translateY(-5px);
+  border-color: #c8dfcf;
+  box-shadow: 0 15px 38px rgba(30, 75, 50, 0.08);
+}
+
+.about-capability-icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 25px;
+  border-radius: 13px;
+  background: #eaf6ed;
+  color: #328052;
+  font-size: 21px;
+}
+
+.about-capability-card > span {
+  position: absolute;
+  top: 29px;
+  right: 22px;
+  color: #bfd2c5;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.about-capability-card h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 11px;
+  color: #244635;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.about-capability-card p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #7a8981;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   IMPLEMENTATION
+   ========================================================= */
+
+.about-implementation {
+  padding: 95px 0;
+  background: #f5faf7;
+  border-top: 1px solid #e0ebe4;
+}
+
+.about-implementation-box {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 65px;
+  align-items: center;
+  padding: 55px;
+  border: 1px solid #dbe9df;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(28, 76, 49, 0.06);
+}
+
+.about-implementation-content h2 {
+  margin: 14px 0 18px;
+  color: #17382a;
+  font-size: 37px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.about-implementation-content h2 span {
+  display: block;
+  color: #348655;
+}
+
+.about-implementation-content > p {
+  margin-bottom: 13px;
+  color: #718078;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-implementation-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px 20px;
+  margin-top: 25px;
+}
+
+.about-implementation-points div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #52685c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.about-implementation-points i {
+  color: #39865a;
+  font-size: 14px;
+}
+
+/* =========================================================
+   IMPLEMENTATION DIAGRAM
+   ========================================================= */
+
+.about-implementation-visual {
+  padding: 10px 5px;
+}
+
+.implementation-node {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 17px;
+  border: 1px solid #dce9e1;
+  border-radius: 13px;
+  background: #f9fcfa;
+  box-shadow: 0 6px 18px rgba(32, 77, 51, 0.045);
+}
+
+.implementation-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border-radius: 11px;
+  background: #e8f5ec;
+  color: #328052;
+  font-size: 18px;
+}
+
+.implementation-node strong {
+  display: block;
+  color: #294b39;
+  font-size: 13px;
+}
+
+.implementation-node span {
+  display: block;
+  margin-top: 3px;
+  color: #87958e;
+  font-size: 10px;
+}
+
+.implementation-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 0;
+  color: #77a487;
+}
+
+.implementation-connector span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.implementation-connector i {
+  font-size: 14px;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.about-cta {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.about-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px 52px;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(94, 167, 113, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #eaf7ef,
+      #f3faf5
+    );
+  border: 1px solid #d6e8dc;
+}
+
+.about-cta-box h2 {
+  margin: 12px 0 10px;
+  color: #17382a;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.about-cta-box h2 span {
+  color: #348655;
+}
+
+.about-cta-box p {
+  max-width: 620px;
+  margin: 0;
+  color: #718078;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.about-cta-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 9px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1199px) {
+  .about-workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .about-workflow-line {
+    display: none;
+  }
+
+  .about-capability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-implementation-box {
+    gap: 40px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 991px) {
+  .about-hero {
+    padding: 85px 0 80px;
+  }
+
+  .about-intro {
+    padding: 80px 0;
+  }
+
+  .about-platform-visual {
+    min-height: 500px;
+    margin-bottom: 30px;
+  }
+
+  .about-intro-content {
+    padding-left: 0;
+  }
+
+  .about-implementation-box {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .about-cta-box {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .about-hero {
+    padding: 70px 0 65px;
+  }
+
+  .about-hero h1 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .about-hero p {
+    font-size: 15px;
+  }
+
+  .about-intro {
+    padding: 65px 0;
+  }
+
+  .about-platform-visual {
+    min-height: 400px;
+  }
+
+  .about-dashboard-window {
+    width: 94%;
+  }
+
+  .about-floating-one {
+    top: 15px;
+    right: -5px;
+  }
+
+  .about-floating-two {
+    bottom: 12px;
+    left: -5px;
+  }
+
+  .about-floating-card {
+    min-width: 165px;
+    padding: 9px 11px;
+  }
+
+  .about-floating-card strong {
+    font-size: 10px;
+  }
+
+  .about-floating-card span {
+    font-size: 8px;
+  }
+
+  .about-intro-content h2,
+  .about-centered-heading h2 {
+    font-size: 32px;
+  }
+
+  .about-workflow {
+    padding: 70px 0;
+  }
+
+  .about-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-workflow-card {
+    min-height: auto;
+  }
+
+  .about-capabilities {
+    padding: 70px 0;
+  }
+
+  .about-capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-implementation {
+    padding: 65px 0;
+  }
+
+  .about-implementation-box {
+    padding: 30px 22px;
+    border-radius: 17px;
+  }
+
+  .about-implementation-content h2 {
+    font-size: 31px;
+  }
+
+  .about-implementation-points {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta {
+    padding: 65px 0;
+  }
+
+  .about-cta-box {
+    padding: 34px 25px;
+    border-radius: 17px;
+  }
+
+  .about-cta-box h2 {
+    font-size: 29px;
+  }
+
+  .about-cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .about-cta-actions a {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 35px;
+  }
+
+  .about-hero p {
+    font-size: 14px;
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+  }
+
+  .about-hero-actions a {
+    width: 100%;
+  }
+
+  .about-platform-visual {
+    min-height: 335px;
+  }
+
+  .about-dashboard-window {
+    width: 100%;
+  }
+
+  .about-dashboard-content {
+    padding: 15px;
+  }
+
+  .about-sensor-box {
+    padding: 9px;
+  }
+
+  .about-sensor-icon {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+  }
+
+  .about-floating-card {
+    display: none;
+  }
+
+  .about-intro-content h2,
+  .about-centered-heading h2 {
+    font-size: 28px;
+  }
+
+  .about-check-list {
+    gap: 13px;
+  }
+
+  .about-implementation-content h2 {
+    font-size: 28px;
+  }
+
+  .about-cta-box h2 {
+    font-size: 27px;
+  }
+}

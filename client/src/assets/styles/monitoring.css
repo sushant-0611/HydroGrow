@@ -1,0 +1,1195 @@
+/* =========================================================
+   HYDROGROW - MONITORING PAGE
+   ========================================================= */
+
+.monitoring-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 28px 30px 50px;
+  color: var(--hg-text);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.monitoring-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.monitoring-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hg-primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.monitoring-eyebrow i {
+  font-size: 0.95rem;
+}
+
+.monitoring-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--hg-primary-dark);
+}
+
+.monitoring-header p {
+  margin: 8px 0 0;
+  max-width: 680px;
+  color: var(--hg-text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.monitoring-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-pill);
+  background: var(--hg-surface);
+  color: var(--hg-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.monitoring-live span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hg-muted);
+}
+
+.monitoring-live.connected {
+  color: var(--hg-primary);
+  border-color: var(--hg-primary-soft);
+  background: var(--hg-surface-muted);
+}
+
+.monitoring-live.connected span {
+  background: var(--hg-primary);
+  box-shadow: 0 0 0 4px rgba(47, 128, 80, 0.12);
+}
+
+.monitoring-live.configured span {
+  background: var(--hg-text-secondary);
+}
+
+/* =========================================================
+   ACTIVE CROP SECTION
+   ========================================================= */
+
+.monitoring-crop-section {
+  margin-bottom: 22px;
+}
+
+.monitoring-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.monitoring-section-heading > div > span,
+.monitoring-section-title > div > span,
+.monitoring-panel-header > div > span {
+  display: block;
+  color: var(--hg-text-secondary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.monitoring-section-heading h2,
+.monitoring-section-title h2,
+.monitoring-panel-header h2 {
+  margin: 3px 0 0;
+  color: var(--hg-text);
+  font-size: 1.12rem;
+  font-weight: 750;
+}
+
+.monitoring-crop-count {
+  padding: 5px 10px;
+  border-radius: var(--hg-radius-pill);
+  background: var(--hg-surface-muted);
+  color: var(--hg-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.monitoring-crop-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 2px 2px 7px;
+  scrollbar-width: thin;
+}
+
+.monitoring-crop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: max-content;
+  padding: 8px 12px 8px 8px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-pill);
+  background: var(--hg-surface);
+  color: var(--hg-text);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.monitoring-crop-chip:hover {
+  border-color: var(--hg-primary-light);
+  transform: translateY(-1px);
+}
+
+.monitoring-crop-chip.active {
+  border-color: var(--hg-primary);
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary-deep);
+  box-shadow: 0 4px 14px rgba(47, 128, 80, 0.1);
+}
+
+.monitoring-crop-chip img {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.monitoring-crop-chip i {
+  font-size: 0.88rem;
+}
+
+/* =========================================================
+   ACTIVE CROP INFO
+   ========================================================= */
+
+.monitoring-active-crop {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  margin-bottom: 24px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-surface);
+  box-shadow: 0 6px 24px rgba(20, 45, 30, 0.04);
+}
+
+.monitoring-active-crop-image {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+  font-size: 1.6rem;
+}
+
+.monitoring-active-crop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.monitoring-active-crop-info > span {
+  color: var(--hg-text-secondary);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.monitoring-active-crop-info h2 {
+  margin: 4px 0 2px;
+  color: var(--hg-primary-dark);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.monitoring-active-crop-info p {
+  margin: 0;
+  color: var(--hg-text-secondary);
+  font-size: 0.82rem;
+}
+
+.monitoring-active-crop-meta {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.monitoring-active-crop-meta > div {
+  min-width: 100px;
+}
+
+.monitoring-active-crop-meta span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--hg-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.monitoring-active-crop-meta strong {
+  display: block;
+  color: var(--hg-text);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.monitoring-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.monitoring-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 82px;
+  padding: 15px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-surface);
+}
+
+.monitoring-summary-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  border-radius: var(--hg-radius);
+  background: var(--hg-surface-muted);
+  color: var(--hg-text-secondary);
+  font-size: 1.05rem;
+}
+
+.monitoring-summary-card span {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--hg-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.monitoring-summary-card strong {
+  display: block;
+  color: var(--hg-text);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.monitoring-summary-card.healthy {
+  border-color: var(--hg-border);
+}
+
+.monitoring-summary-card.healthy
+.monitoring-summary-icon {
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+}
+
+.monitoring-summary-card.warning {
+  border-color: var(--hg-warning-bg);
+}
+
+.monitoring-summary-card.warning
+.monitoring-summary-icon {
+  background: var(--hg-surface-muted);
+  color: var(--hg-danger);
+}
+
+.monitoring-summary-card.critical {
+  border-color: var(--hg-danger-bg);
+}
+
+.monitoring-summary-card.critical
+.monitoring-summary-icon {
+  background: var(--hg-danger-bg);
+  color: var(--hg-danger);
+}
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.monitoring-section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.monitoring-device {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-sm);
+  background: var(--hg-surface);
+  color: var(--hg-text-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.monitoring-device i {
+  color: var(--hg-primary);
+}
+
+/* =========================================================
+   SENSOR GRID
+   ========================================================= */
+
+.monitoring-sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.monitoring-sensor-card {
+  position: relative;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-surface);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.monitoring-sensor-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--hg-primary-light);
+  box-shadow: 0 8px 22px rgba(20, 45, 30, 0.07);
+}
+
+.monitoring-sensor-card.selected {
+  border-color: var(--hg-primary);
+  box-shadow:
+    0 0 0 2px rgba(47, 128, 80, 0.08),
+    0 8px 22px rgba(20, 45, 30, 0.06);
+}
+
+.monitoring-sensor-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.monitoring-sensor-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--hg-radius-sm);
+  background: var(--hg-surface-muted);
+  color: var(--hg-primary);
+  font-size: 1rem;
+}
+
+.monitoring-sensor-name {
+  margin-top: 14px;
+  color: var(--hg-text-secondary);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.monitoring-sensor-value {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 3px;
+  color: var(--hg-primary-dark);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.monitoring-sensor-value small {
+  color: var(--hg-text-secondary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.monitoring-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid var(--hg-border);
+}
+
+.monitoring-range span {
+  color: var(--hg-muted);
+  font-size: 0.66rem;
+}
+
+.monitoring-range strong {
+  color: var(--hg-text-secondary);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.monitoring-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border-radius: var(--hg-radius-pill);
+  font-size: 0.61rem;
+  font-weight: 800;
+}
+
+.monitoring-status.healthy {
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+}
+
+.monitoring-status.warning {
+  background: var(--hg-warning-bg);
+  color: var(--hg-danger);
+}
+
+.monitoring-status.critical {
+  background: var(--hg-danger-bg);
+  color: var(--hg-danger);
+}
+
+.monitoring-status.unknown {
+  background: var(--hg-surface-muted);
+  color: var(--hg-text-secondary);
+}
+
+/* =========================================================
+   CONTENT GRID
+   ========================================================= */
+
+.monitoring-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.9fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.monitoring-panel {
+  min-width: 0;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-surface);
+  box-shadow: 0 5px 20px rgba(20, 45, 30, 0.035);
+}
+
+.monitoring-chart-panel {
+  padding: 20px;
+}
+
+.monitoring-details-panel {
+  padding: 20px;
+}
+
+.monitoring-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.monitoring-chart-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border-radius: var(--hg-radius-pill);
+  font-size: 0.64rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.monitoring-chart-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.monitoring-chart-status.healthy {
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+}
+
+.monitoring-chart-status.healthy span {
+  background: var(--hg-primary);
+}
+
+.monitoring-chart-status.warning {
+  background: var(--hg-warning-bg);
+  color: var(--hg-danger);
+}
+
+.monitoring-chart-status.warning span {
+  background: var(--hg-warning);
+}
+
+.monitoring-chart-status.critical {
+  background: var(--hg-danger-bg);
+  color: var(--hg-danger);
+}
+
+.monitoring-chart-status.critical span {
+  background: var(--hg-danger);
+}
+
+.monitoring-chart-status.unknown {
+  background: var(--hg-surface-muted);
+  color: var(--hg-text-secondary);
+}
+
+.monitoring-chart-status.unknown span {
+  background: var(--hg-text-secondary);
+}
+
+.monitoring-chart-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 18px 0 4px;
+}
+
+.monitoring-chart-value strong {
+  color: var(--hg-primary-dark);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.monitoring-chart-value span {
+  color: var(--hg-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.monitoring-chart {
+  width: 100%;
+  min-height: 300px;
+  margin-top: 4px;
+}
+
+/* =========================================================
+   NO HISTORY
+   ========================================================= */
+
+.monitoring-no-history {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.monitoring-no-history > div {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-surface-muted);
+  color: var(--hg-text-secondary);
+  font-size: 1.35rem;
+}
+
+.monitoring-no-history strong {
+  color: var(--hg-text);
+  font-size: 0.9rem;
+}
+
+.monitoring-no-history span {
+  max-width: 390px;
+  margin-top: 7px;
+  color: var(--hg-muted);
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   PARAMETER DETAILS
+   ========================================================= */
+
+.monitoring-detail-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+  font-size: 1.35rem;
+}
+
+.monitoring-details-panel h3 {
+  margin: 14px 0 5px;
+  color: var(--hg-text);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.monitoring-detail-description {
+  margin: 0 0 20px;
+  color: var(--hg-muted);
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+
+.monitoring-detail-current,
+.monitoring-detail-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-top: 1px solid var(--hg-border);
+}
+
+.monitoring-detail-current span,
+.monitoring-detail-range span {
+  color: var(--hg-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.monitoring-detail-current strong,
+.monitoring-detail-range strong {
+  color: var(--hg-text);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.monitoring-detail-current small {
+  margin-left: 4px;
+  color: var(--hg-muted);
+  font-size: 0.65rem;
+}
+
+.monitoring-range-bar {
+  position: relative;
+  height: 8px;
+  margin: 16px 0;
+  overflow: hidden;
+  border-radius: var(--hg-radius-pill);
+  background: var(--hg-border);
+}
+
+.monitoring-range-indicator {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.monitoring-range-indicator.healthy {
+  background: var(--hg-primary);
+}
+
+.monitoring-range-indicator.warning {
+  background: var(--hg-warning);
+}
+
+.monitoring-range-indicator.critical {
+  background: var(--hg-danger);
+}
+
+.monitoring-range-indicator.unknown {
+  background: var(--hg-muted);
+}
+
+.monitoring-detail-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 16px;
+  padding: 13px;
+  border-radius: var(--hg-radius);
+}
+
+.monitoring-detail-status > i {
+  margin-top: 2px;
+  font-size: 1rem;
+}
+
+.monitoring-detail-status > div {
+  min-width: 0;
+}
+
+.monitoring-detail-status strong {
+  display: block;
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+
+.monitoring-detail-status span {
+  display: block;
+  margin-top: 4px;
+  color: var(--hg-muted);
+  font-size: 0.68rem;
+}
+
+.monitoring-detail-status.healthy {
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary-deep);
+}
+
+.monitoring-detail-status.warning {
+  background: var(--hg-warning-bg);
+  color: var(--hg-danger);
+}
+
+.monitoring-detail-status.critical {
+  background: var(--hg-danger-bg);
+  color: var(--hg-danger);
+}
+
+.monitoring-detail-status.unknown {
+  background: var(--hg-surface-muted);
+  color: var(--hg-text-secondary);
+}
+
+/* =========================================================
+   INFO FOOTER
+   ========================================================= */
+
+.monitoring-info {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 17px;
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  background: var(--hg-surface-muted);
+}
+
+.monitoring-info-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--hg-radius-sm);
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+}
+
+.monitoring-info strong {
+  display: block;
+  color: var(--hg-text);
+  font-size: 0.76rem;
+}
+
+.monitoring-info p {
+  margin: 3px 0 0;
+  color: var(--hg-muted);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.monitoring-last-update {
+  min-width: 130px;
+  text-align: right;
+}
+
+.monitoring-last-update span {
+  display: block;
+  color: var(--hg-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.monitoring-last-update strong {
+  margin-top: 3px;
+  color: var(--hg-text);
+  font-size: 0.72rem;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.monitoring-empty-state {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.monitoring-empty-icon {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary);
+  font-size: 1.8rem;
+}
+
+.monitoring-empty-state h1 {
+  margin: 6px 0 8px;
+  color: var(--hg-text);
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.monitoring-empty-state p {
+  max-width: 520px;
+  margin: 0 0 20px;
+  color: var(--hg-text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.monitoring-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  border-radius: var(--hg-radius-sm);
+  background: var(--hg-primary);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+}
+
+.monitoring-primary-btn:hover {
+  background: var(--hg-primary-deep);
+  color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .monitoring-page {
+    padding: 24px 22px 42px;
+  }
+
+  .monitoring-sensor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .monitoring-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .monitoring-details-panel {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 15px;
+  }
+
+  .monitoring-details-panel
+  .monitoring-panel-header {
+    grid-column: 1 / -1;
+  }
+
+  .monitoring-detail-icon {
+    margin-top: 18px;
+  }
+
+  .monitoring-details-panel h3 {
+    margin-top: 25px;
+  }
+
+  .monitoring-detail-description,
+  .monitoring-detail-current,
+  .monitoring-detail-range,
+  .monitoring-range-bar,
+  .monitoring-detail-status {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET SMALL
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .monitoring-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .monitoring-sensor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .monitoring-active-crop {
+    grid-template-columns: auto 1fr;
+  }
+
+  .monitoring-active-crop-meta {
+    grid-column: 1 / -1;
+    padding-top: 13px;
+    border-top: 1px solid var(--hg-border);
+  }
+
+  .monitoring-info {
+    grid-template-columns: auto 1fr;
+  }
+
+  .monitoring-last-update {
+    grid-column: 1 / -1;
+    padding-top: 11px;
+    border-top: 1px solid var(--hg-border);
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .monitoring-page {
+    padding: 18px 14px 35px;
+  }
+
+  .monitoring-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .monitoring-header h1 {
+    font-size: 2rem;
+  }
+
+  .monitoring-header p {
+    font-size: 0.83rem;
+  }
+
+  .monitoring-live {
+    align-self: flex-start;
+  }
+
+  .monitoring-section-heading {
+    align-items: flex-start;
+  }
+
+  .monitoring-section-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .monitoring-device {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .monitoring-active-crop {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .monitoring-active-crop-image {
+    width: 52px;
+    height: 52px;
+  }
+
+  .monitoring-active-crop-info h2 {
+    font-size: 1.08rem;
+  }
+
+  .monitoring-active-crop-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .monitoring-active-crop-meta > div {
+    min-width: 0;
+  }
+
+  .monitoring-active-crop-meta strong {
+    font-size: 0.7rem;
+    word-break: break-word;
+  }
+
+  .monitoring-summary {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .monitoring-summary-card {
+    min-height: 72px;
+    padding: 11px;
+    gap: 9px;
+  }
+
+  .monitoring-summary-icon {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+    font-size: 0.88rem;
+  }
+
+  .monitoring-summary-card span {
+    font-size: 0.63rem;
+  }
+
+  .monitoring-summary-card strong {
+    font-size: 1.05rem;
+  }
+
+  .monitoring-sensor-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .monitoring-sensor-card {
+    padding: 14px;
+  }
+
+  .monitoring-sensor-value {
+    font-size: 1.45rem;
+  }
+
+  .monitoring-content-grid {
+    gap: 12px;
+  }
+
+  .monitoring-chart-panel,
+  .monitoring-details-panel {
+    padding: 15px;
+  }
+
+  .monitoring-chart {
+    min-height: 250px;
+  }
+
+  .monitoring-chart-value strong {
+    font-size: 1.7rem;
+  }
+
+  .monitoring-chart-status {
+    font-size: 0.58rem;
+  }
+
+  .monitoring-info {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .monitoring-info-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .monitoring-info p {
+    font-size: 0.65rem;
+  }
+
+  .monitoring-last-update {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .monitoring-page {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .monitoring-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-active-crop-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-active-crop-meta > div {
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--hg-border);
+  }
+
+  .monitoring-panel-header {
+    flex-direction: column;
+  }
+
+  .monitoring-chart-status {
+    align-self: flex-start;
+  }
+}
+/* Numeric polish */
+.monitoring-sensor-value,
+.monitoring-chart-value,
+.monitoring-crop-count {
+  font-variant-numeric: tabular-nums;
+}

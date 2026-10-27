@@ -1,0 +1,435 @@
+/* =========================================================
+   HYDROGROW
+   PROFESSIONAL FOOTER
+   ========================================================= */
+
+.hydrogrow-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(72, 142, 91, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #102b20 0%,
+      #123326 50%,
+      #0d261c 100%
+    );
+  color: #ffffff;
+}
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+   ========================================================= */
+
+.hydrogrow-footer::before {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  right: -230px;
+  top: -220px;
+  border: 1px solid rgba(121, 184, 139, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hydrogrow-footer::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: -170px;
+  bottom: -180px;
+  border: 1px solid rgba(121, 184, 139, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* =========================================================
+   MAIN FOOTER
+   ========================================================= */
+
+.hydrogrow-footer-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 1.8fr)
+    minmax(130px, 1fr)
+    minmax(130px, 1fr)
+    minmax(220px, 1.25fr);
+  gap: 55px;
+  padding: 75px 0 55px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.hydrogrow-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hydrogrow-footer-logo:hover {
+  color: #ffffff;
+}
+
+.hydrogrow-footer-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  flex: 0 0 47px;
+  border: 1px solid rgba(143, 204, 158, 0.22);
+  border-radius: 13px;
+  background: rgba(72, 153, 93, 0.16);
+  color: #7fca91;
+  font-size: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.hydrogrow-footer-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hydrogrow-footer-logo-text strong {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.hydrogrow-footer-logo-text small {
+  margin-top: 4px;
+  color: #8fa79a;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hydrogrow-footer-description {
+  max-width: 430px;
+  margin: 22px 0 20px;
+  color: #9aafa3;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.hydrogrow-footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid rgba(121, 181, 137, 0.13);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #88a195;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.footer-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #65b879;
+  box-shadow:
+    0 0 0 4px rgba(101, 184, 121, 0.1);
+}
+
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
+
+.hydrogrow-footer-column h3 {
+  margin: 2px 0 21px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.hydrogrow-footer-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hydrogrow-footer-column li {
+  margin: 0;
+}
+
+.hydrogrow-footer-column li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #91a79b;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hydrogrow-footer-column li a i {
+  color: #4f9b67;
+  font-size: 8px;
+  transition: transform 0.2s ease;
+}
+
+.hydrogrow-footer-column li a:hover {
+  color: #d9eadf;
+  transform: translateX(2px);
+}
+
+.hydrogrow-footer-column li a:hover i {
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 15px;
+}
+
+.footer-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  flex: 0 0 37px;
+  border: 1px solid rgba(121, 181, 137, 0.13);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #70b883;
+  font-size: 13px;
+}
+
+.footer-contact-item div {
+  min-width: 0;
+}
+
+.footer-contact-item small {
+  display: block;
+  margin-bottom: 2px;
+  color: #718a7c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-contact-item span:not(.footer-contact-icon) {
+  display: block;
+  color: #a4b6ac;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CONTACT BUTTON
+   ========================================================= */
+
+.footer-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 39px;
+  margin-top: 5px;
+  padding: 0 15px;
+  border: 1px solid rgba(109, 177, 127, 0.32);
+  border-radius: 9px;
+  background: rgba(69, 145, 87, 0.11);
+  color: #8bce9b;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-contact-button:hover {
+  border-color: rgba(109, 177, 127, 0.55);
+  background: rgba(69, 145, 87, 0.2);
+  color: #c7ebd0;
+  transform: translateY(-1px);
+}
+
+.footer-contact-button i {
+  transition: transform 0.2s ease;
+}
+
+.footer-contact-button:hover i {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.hydrogrow-footer-divider {
+  position: relative;
+  z-index: 2;
+  height: 1px;
+  background: rgba(176, 211, 188, 0.1);
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.hydrogrow-footer-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0 25px;
+}
+
+.hydrogrow-footer-bottom p,
+.hydrogrow-footer-bottom span {
+  margin: 0;
+  color: #718a7d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.hydrogrow-footer-bottom-links {
+  text-align: right;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1199px) {
+  .hydrogrow-footer-main {
+    grid-template-columns:
+      1.7fr
+      1fr
+      1fr;
+    gap: 40px;
+  }
+
+  .hydrogrow-footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .hydrogrow-footer-contact .footer-contact-item {
+    display: inline-flex;
+    margin-right: 25px;
+  }
+
+  .footer-contact-button {
+    margin-left: 5px;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .hydrogrow-footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 38px 25px;
+    padding: 60px 0 45px;
+  }
+
+  .hydrogrow-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .hydrogrow-footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .hydrogrow-footer-contact .footer-contact-item {
+    display: flex;
+    margin-right: 0;
+  }
+
+  .footer-contact-button {
+    margin-left: 0;
+  }
+
+  .hydrogrow-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hydrogrow-footer-bottom-links {
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .hydrogrow-footer-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 50px 0 38px;
+  }
+
+  .hydrogrow-footer-brand,
+  .hydrogrow-footer-contact {
+    grid-column: auto;
+  }
+
+  .hydrogrow-footer-description {
+    font-size: 12px;
+  }
+
+  .hydrogrow-footer-column h3 {
+    margin-bottom: 16px;
+  }
+
+  .hydrogrow-footer-bottom {
+    padding: 19px 0 22px;
+  }
+
+  .hydrogrow-footer-bottom p,
+  .hydrogrow-footer-bottom span {
+    font-size: 9px;
+  }
+}

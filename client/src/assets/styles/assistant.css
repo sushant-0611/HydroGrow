@@ -1,0 +1,449 @@
+/* =========================================================
+   HYDROGROW ASSISTANT — FLOATING CHAT WIDGET
+   ========================================================= */
+
+.hga-root {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1400;
+  font-family: inherit;
+}
+
+/* ---------------------------------------------------------
+   LAUNCHER
+   --------------------------------------------------------- */
+
+.hga-launcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid #d5e5da;
+  background: #ffffff;
+  box-shadow:
+    0 16px 34px rgba(15, 61, 36, 0.22),
+    0 2px 6px rgba(15, 61, 36, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.hga-launcher:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 40px rgba(15, 61, 36, 0.26),
+    0 4px 10px rgba(15, 61, 36, 0.1);
+}
+
+.hga-launcher:focus-visible {
+  outline: 3px solid rgba(21, 148, 71, 0.35);
+  outline-offset: 3px;
+}
+
+.hga-launcher-face {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #edf8f1;
+}
+
+.hga-launcher-face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hga-launcher-dot {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.16);
+}
+
+.hga-launcher-icon {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #146c3a;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-size: 12px;
+}
+
+/* ---------------------------------------------------------
+   PANEL
+   --------------------------------------------------------- */
+
+.hga-panel {
+  position: absolute;
+  right: 0;
+  bottom: 78px;
+  display: flex;
+  flex-direction: column;
+  width: 372px;
+  max-height: min(600px, calc(100vh - 120px));
+  background: #ffffff;
+  border: 1px solid #dde8e1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(15, 45, 28, 0.24),
+    0 6px 18px rgba(15, 45, 28, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(0.98);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.hga-panel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* HEADER */
+
+.hga-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #0d6b39 0%, #159447 100%);
+  color: #ffffff;
+}
+
+.hga-avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: visible;
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+}
+
+.hga-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hga-online-dot {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4ade80;
+  border: 2px solid #0d6b39;
+}
+
+.hga-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hga-identity strong {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.hga-identity span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hga-close {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.hga-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* BODY */
+
+.hga-body {
+  flex: 1;
+  min-height: 240px;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f6faf7;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #c8dbcf transparent;
+}
+
+.hga-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hga-body::-webkit-scrollbar-thumb {
+  background: #c8dbcf;
+  border-radius: 999px;
+}
+
+.hga-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 88%;
+  animation: hga-message-in 0.18s ease;
+}
+
+.hga-message.assistant {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.hga-message.user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.hga-bubble {
+  padding: 10px 13px;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.hga-message.assistant .hga-bubble {
+  background: #ffffff;
+  border: 1px solid #e2ece6;
+  border-bottom-left-radius: 5px;
+  color: #23392c;
+  box-shadow: 0 1px 2px rgba(20, 60, 36, 0.04);
+}
+
+.hga-message.user .hga-bubble {
+  background: #128c44;
+  border-bottom-right-radius: 5px;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(18, 140, 68, 0.18);
+}
+
+.hga-typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 13px 15px;
+}
+
+.hga-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8fb8a0;
+  animation: hga-typing 1.1s infinite ease-in-out;
+}
+
+.hga-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.hga-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* SUGGESTIONS */
+
+.hga-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.hga-chip {
+  padding: 6px 11px;
+  border: 1px solid #cfe4d8;
+  border-radius: 999px;
+  background: #f2fbf5;
+  color: #146c3a;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.hga-chip:hover {
+  background: #e3f6ea;
+  border-color: #a9d8bb;
+  transform: translateY(-1px);
+}
+
+/* FOOTER */
+
+.hga-footer {
+  padding: 12px 14px 11px;
+  border-top: 1px solid #e6efe9;
+  background: #ffffff;
+}
+
+.hga-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hga-form input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  padding: 0 13px;
+  border: 1px solid #dbe7e0;
+  border-radius: 12px;
+  background: #f8fbf9;
+  color: #22382b;
+  font-size: 13px;
+  outline: none;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    background 0.16s ease;
+}
+
+.hga-form input::placeholder {
+  color: #93a399;
+}
+
+.hga-form input:focus {
+  border-color: #7fc99b;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(21, 148, 71, 0.1);
+}
+
+.hga-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: #149447;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.16s ease,
+    transform 0.16s ease;
+}
+
+.hga-send:hover:not(:disabled) {
+  background: #0f7c3b;
+  transform: translateY(-1px);
+}
+
+.hga-send:disabled {
+  background: #c7d8cd;
+  cursor: not-allowed;
+}
+
+.hga-footer small {
+  display: block;
+  margin-top: 8px;
+  font-size: 10.5px;
+  color: #7d8f84;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* ANIMATIONS */
+
+@keyframes hga-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hga-typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+  .hga-root {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hga-launcher {
+    width: 58px;
+    height: 58px;
+  }
+
+  .hga-panel {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 100px);
+    bottom: 72px;
+  }
+}

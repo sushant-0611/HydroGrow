@@ -1,0 +1,10 @@
+{
+  "name": "hydrogrow",
+  "private": true,
+  "version": "1.0.0",
+  "description": "HydroGrow - Intelligent Hydroponics Monitoring and Automation",
+  "scripts": {
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev"
+  }
+}

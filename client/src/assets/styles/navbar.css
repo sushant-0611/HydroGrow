@@ -1,0 +1,372 @@
+/* =========================================================
+   HYDROGROW
+   MAIN NAVBAR
+   ========================================================= */
+
+.hydrogrow-main-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  min-height: 76px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e4ece7;
+  box-shadow: 0 4px 20px rgba(25, 67, 43, 0.045);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.hydrogrow-main-navbar > .container {
+  min-height: 76px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.hydrogrow-brand {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 11px;
+  padding: 0 !important;
+  margin: 0;
+  text-decoration: none;
+}
+
+.hydrogrow-brand:hover {
+  text-decoration: none;
+}
+
+.hydrogrow-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border-radius: 13px;
+  background: linear-gradient(
+    145deg,
+    #348957,
+    #247044
+  );
+  color: #ffffff;
+  font-size: 19px;
+  box-shadow:
+    0 7px 18px rgba(47, 128, 80, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hydrogrow-brand:hover .hydrogrow-brand-icon {
+  transform: translateY(-1px) rotate(-3deg);
+  box-shadow:
+    0 10px 23px rgba(47, 128, 80, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.hydrogrow-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.hydrogrow-brand-text strong {
+  color: #17382a;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hydrogrow-brand-text small {
+  margin-top: 5px;
+  color: #789087;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   NAVIGATION CONTAINER
+   ========================================================= */
+
+.hydrogrow-main-navbar .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.hydrogrow-main-navbar .navbar-nav {
+  gap: 2px;
+}
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.hydrogrow-nav-link {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  margin: 0 2px;
+  padding: 0 13px !important;
+  border-radius: 9px;
+  color: #5f7369 !important;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hydrogrow-nav-link:hover {
+  background: #f1f7f3;
+  color: #2d7d4e !important;
+}
+
+.hydrogrow-nav-link.active {
+  background: #eaf6ed;
+  color: #2c7c4c !important;
+  font-weight: 700;
+}
+
+.hydrogrow-nav-link.active::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  bottom: 4px;
+  left: 13px;
+  height: 2px;
+  border-radius: 10px;
+  background: #318253;
+}
+
+/* =========================================================
+   CROPS NAV LINK
+   ========================================================= */
+
+.hydrogrow-crops-link {
+  gap: 6px;
+}
+
+.hydrogrow-crops-link i {
+  font-size: 12px;
+  color: #4b8c63;
+}
+
+.hydrogrow-crops-link.active i {
+  color: #2f8050;
+}
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.hydrogrow-login-item {
+  margin-left: 10px;
+}
+
+.hydrogrow-login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 0 17px;
+  border: 1px solid #2f8050;
+  border-radius: 10px;
+  background: #2f8050;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(47, 128, 80, 0.12);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hydrogrow-login-btn:hover {
+  border-color: #246d41;
+  background: #246d41;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 19px rgba(47, 128, 80, 0.19);
+}
+
+.hydrogrow-login-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.hydrogrow-login-btn:hover .hydrogrow-login-icon {
+  animation: loginIconMove 0.35s ease;
+}
+
+@keyframes loginIconMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   MOBILE TOGGLER
+   ========================================================= */
+
+.hydrogrow-navbar-toggler {
+  width: 43px;
+  height: 43px;
+  padding: 0;
+  border: 1px solid #dbe8df !important;
+  border-radius: 10px;
+  background: #f7faf8;
+  box-shadow: none !important;
+}
+
+.hydrogrow-navbar-toggler:focus {
+  box-shadow:
+    0 0 0 3px rgba(47, 128, 80, 0.12) !important;
+}
+
+.hydrogrow-navbar-toggler .navbar-toggler-icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1200px) {
+  .hydrogrow-main-navbar .container {
+    max-width: 1200px;
+  }
+
+  .hydrogrow-nav-link {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+  .hydrogrow-main-navbar {
+    min-height: 70px;
+  }
+
+  .hydrogrow-main-navbar > .container {
+    min-height: 70px;
+  }
+
+  .hydrogrow-main-navbar .navbar-collapse {
+    margin-top: 13px;
+    padding: 12px;
+    border: 1px solid #e0ebe4;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(25, 67, 43, 0.08);
+  }
+
+  .hydrogrow-main-navbar .navbar-nav {
+    align-items: stretch !important;
+    gap: 3px;
+  }
+
+  .hydrogrow-nav-link {
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 45px;
+    margin: 0;
+    padding: 0 13px !important;
+  }
+
+  .hydrogrow-nav-link.active::after {
+    right: auto;
+    bottom: 8px;
+    left: 13px;
+    width: 24px;
+  }
+
+  .hydrogrow-login-item {
+    margin-top: 8px;
+    margin-left: 0;
+  }
+
+  .hydrogrow-login-btn {
+    width: 100%;
+    min-height: 46px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+  .hydrogrow-main-navbar > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .hydrogrow-brand-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    border-radius: 12px;
+    font-size: 17px;
+  }
+
+  .hydrogrow-brand-text strong {
+    font-size: 18px;
+  }
+
+  .hydrogrow-brand-text small {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .hydrogrow-navbar-toggler {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .hydrogrow-brand-text small {
+    display: none;
+  }
+
+  .hydrogrow-brand-text strong {
+    font-size: 17px;
+  }
+}

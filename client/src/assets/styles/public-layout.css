@@ -1,0 +1,50 @@
+/* =========================================================
+   HYDROGROW
+   PUBLIC LAYOUT
+   ========================================================= */
+
+.hydrogrow-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7faf8;
+}
+
+.hydrogrow-main {
+  flex: 1 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Prevent horizontal overflow from decorative sections */
+.hydrogrow-app,
+.hydrogrow-main {
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   GLOBAL LINK RESET FOR PUBLIC PAGES
+   ========================================================= */
+
+.hydrogrow-app a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   MAIN CONTENT SELECTION
+   ========================================================= */
+
+.hydrogrow-app ::selection {
+  background: #cfe8d7;
+  color: #17382a;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .hydrogrow-main {
+    width: 100%;
+  }
+}

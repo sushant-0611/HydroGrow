@@ -1,0 +1,371 @@
+/* =========================================================
+   HYDROGROW DESIGN SYSTEM
+   Shared tokens + base refinements
+   Imported globally (main.jsx) — keep page CSS on these vars
+   ========================================================= */
+
+:root {
+  /* Brand greens */
+  --hg-primary: #2f8050;
+  --hg-primary-dark: #17382a;
+  --hg-primary-deep: #22563b;
+  --hg-primary-soft: #e8f5ec;
+  --hg-primary-light: #72c48b;
+
+  /* Surfaces */
+  --hg-bg: #f4f7f5;
+  --hg-surface: #ffffff;
+  --hg-surface-muted: #f8faf9;
+  --hg-border: #e2eae4;
+  --hg-border-strong: #cfdcd3;
+
+  /* Text */
+  --hg-text: #1f2d26;
+  --hg-text-secondary: #51635a;
+  --hg-muted: #7d8f85;
+
+  /* Status */
+  --hg-success: #2f8050;
+  --hg-success-bg: #eaf6ee;
+  --hg-warning: #b3761f;
+  --hg-warning-bg: #fdf3e1;
+  --hg-danger: #c04545;
+  --hg-danger-bg: #fdeeee;
+  --hg-info: #2f6f9f;
+  --hg-info-bg: #e9f2f9;
+
+  /* Radii */
+  --hg-radius-sm: 8px;
+  --hg-radius: 12px;
+  --hg-radius-lg: 16px;
+  --hg-radius-pill: 999px;
+
+  /* Shadows */
+  --hg-shadow-sm: 0 1px 2px rgba(23, 56, 42, 0.05);
+  --hg-shadow: 0 2px 10px rgba(23, 56, 42, 0.06);
+  --hg-shadow-md: 0 6px 20px rgba(23, 56, 42, 0.08);
+  --hg-shadow-lg: 0 14px 38px rgba(23, 56, 42, 0.12);
+
+  /* Motion */
+  --hg-transition: 0.2s ease;
+}
+
+
+/* =========================================================
+   GLOBAL BASE
+   ========================================================= */
+
+body {
+  background: var(--hg-bg);
+  color: var(--hg-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(47, 128, 80, 0.18);
+  color: var(--hg-primary-dark);
+}
+
+/* Refined scrollbars (WebKit) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c4d2c9 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #c4d2c9;
+  border: 2px solid transparent;
+  border-radius: var(--hg-radius-pill);
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #a6bab0;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--hg-primary);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   SHARED CARD
+   ========================================================= */
+
+.hg-card {
+  background: var(--hg-surface);
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  box-shadow: var(--hg-shadow-sm);
+  transition:
+    box-shadow var(--hg-transition),
+    transform var(--hg-transition),
+    border-color var(--hg-transition);
+}
+
+.hg-card--hover:hover {
+  box-shadow: var(--hg-shadow-md);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SHARED BADGE
+   ========================================================= */
+
+.hg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--hg-radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.hg-badge--success {
+  background: var(--hg-success-bg);
+  color: var(--hg-success);
+}
+
+.hg-badge--warning {
+  background: var(--hg-warning-bg);
+  color: var(--hg-warning);
+}
+
+.hg-badge--danger {
+  background: var(--hg-danger-bg);
+  color: var(--hg-danger);
+}
+
+.hg-badge--info {
+  background: var(--hg-info-bg);
+  color: var(--hg-info);
+}
+
+.hg-badge--neutral {
+  background: #eef2f0;
+  color: var(--hg-text-secondary);
+}
+
+
+/* =========================================================
+   SHARED BUTTON
+   ========================================================= */
+
+.hg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--hg-radius);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--hg-transition),
+    border-color var(--hg-transition),
+    color var(--hg-transition),
+    box-shadow var(--hg-transition),
+    transform var(--hg-transition);
+}
+
+.hg-btn:active {
+  transform: translateY(1px);
+}
+
+.hg-btn--primary {
+  background: var(--hg-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(47, 128, 80, 0.22);
+}
+
+.hg-btn--primary:hover {
+  background: #267043;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(47, 128, 80, 0.28);
+}
+
+.hg-btn--outline {
+  background: var(--hg-surface);
+  border-color: var(--hg-border-strong);
+  color: var(--hg-text-secondary);
+}
+
+.hg-btn--outline:hover {
+  border-color: var(--hg-primary-light);
+  background: var(--hg-surface-muted);
+  color: var(--hg-primary-dark);
+}
+
+.hg-btn--ghost {
+  background: transparent;
+  color: var(--hg-text-secondary);
+}
+
+.hg-btn--ghost:hover {
+  background: var(--hg-primary-soft);
+  color: var(--hg-primary-dark);
+}
+
+.hg-btn--danger {
+  background: var(--hg-danger-bg);
+  border-color: #f1cccc;
+  color: var(--hg-danger);
+}
+
+.hg-btn--danger:hover {
+  background: #fbdede;
+  color: #a53535;
+}
+
+.hg-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   SHARED PAGE HEADER
+   ========================================================= */
+
+.hg-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.hg-page-head h1,
+.hg-page-head h2 {
+  margin: 0;
+  color: var(--hg-primary-dark);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hg-page-head p {
+  margin: 5px 0 0;
+  color: var(--hg-muted);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SHARED TABLE
+   ========================================================= */
+
+.hg-table-wrap {
+  overflow: hidden;
+  background: var(--hg-surface);
+  border: 1px solid var(--hg-border);
+  border-radius: var(--hg-radius-lg);
+  box-shadow: var(--hg-shadow-sm);
+}
+
+.hg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.hg-table thead th {
+  padding: 12px 16px;
+  background: var(--hg-surface-muted);
+  border-bottom: 1px solid var(--hg-border);
+  color: var(--hg-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.hg-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #edf2ee;
+  color: var(--hg-text-secondary);
+  vertical-align: middle;
+}
+
+.hg-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.hg-table tbody tr {
+  transition: background var(--hg-transition);
+}
+
+.hg-table tbody tr:hover {
+  background: #f7fbf8;
+}
+
+
+/* =========================================================
+   SHARED EMPTY STATE
+   ========================================================= */
+
+.hg-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.hg-empty > i {
+  font-size: 34px;
+  color: var(--hg-primary-light);
+}
+
+.hg-empty strong {
+  color: var(--hg-primary-dark);
+  font-size: 15px;
+}
+
+.hg-empty span {
+  color: var(--hg-muted);
+  font-size: 12.5px;
+  max-width: 380px;
+}
+
+
+/* =========================================================
+   MOTION PREFERENCE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

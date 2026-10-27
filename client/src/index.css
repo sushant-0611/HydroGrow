@@ -1,0 +1,206 @@
+/* =========================================================
+   HYDROGROW
+   PROTECTED ROUTE LOADING
+   ========================================================= */
+
+.protected-route-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(68, 150, 98, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #eef8f1 0%,
+      #f8fbf9 50%,
+      #eaf6ee 100%
+    );
+}
+
+
+/* =========================================================
+   LOADING CARD
+   ========================================================= */
+
+.protected-loading-card {
+  width: min(100%, 360px);
+
+  padding: 38px 30px;
+
+  text-align: center;
+
+  border: 1px solid #dce9e1;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 20px 60px rgba(28, 76, 49, 0.10),
+    0 5px 20px rgba(28, 76, 49, 0.04);
+
+  backdrop-filter: blur(12px);
+
+  animation: protectedCardIn 0.25s ease;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.protected-loading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 19px;
+
+  background: #eaf6ed;
+
+  color: #2f8050;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 8px 25px rgba(47, 128, 80, 0.10);
+}
+
+
+/* =========================================================
+   CUSTOM LOADING DOTS
+   ========================================================= */
+
+.protected-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  height: 20px;
+
+  margin-bottom: 9px;
+}
+
+.protected-loading-spinner span {
+  display: block;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #3a8958;
+
+  animation: protectedDot 1.2s infinite ease-in-out;
+}
+
+.protected-loading-spinner span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.protected-loading-spinner span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.protected-loading-spinner span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.protected-loading-card h2 {
+  margin: 0;
+
+  color: #17382a;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+}
+
+.protected-loading-card p {
+  margin: 7px 0 0;
+
+  color: #7a8981;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes protectedCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes protectedDot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .protected-loading-card {
+    padding: 32px 22px;
+    border-radius: 18px;
+  }
+
+  .protected-loading-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 17px;
+
+    font-size: 24px;
+  }
+
+  .protected-loading-card h2 {
+    font-size: 21px;
+  }
+}
